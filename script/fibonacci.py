@@ -11,11 +11,11 @@ class Fibonacci:
     F(0) = 0, F(1) = 1, F(n) = F(n-1) + F(n-2) for n > 1
     """
     
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize the Fibonacci class."""
-        self._cache = {0: 0, 1: 1}
+        self._cache: dict[int, int] = {0: 0, 1: 1}
     
-    def nth_fibonacci_iterative(self, n):
+    def nth_fibonacci_iterative(self, n: int) -> int:
         """
         Calculate the nth Fibonacci number using iterative approach.
         
@@ -51,7 +51,7 @@ class Fibonacci:
         # Return the nth Fibonacci number (stored in b)
         return b
     
-    def nth_fibonacci_recursive(self, n):
+    def nth_fibonacci_recursive(self, n: int) -> int:
         """
         Calculate the nth Fibonacci number using recursive approach with memoization.
         
@@ -77,7 +77,7 @@ class Fibonacci:
         self._cache[n] = self.nth_fibonacci_recursive(n - 1) + self.nth_fibonacci_recursive(n - 2)
         return self._cache[n]
     
-    def generate_sequence(self, count):
+    def generate_sequence(self, count: int) -> list[int]:
         """
         Generate a Fibonacci sequence with the specified number of terms.
         
@@ -106,7 +106,7 @@ class Fibonacci:
         
         return sequence
     
-    def is_fibonacci_number(self, num):
+    def is_fibonacci_number(self, num: int) -> bool:
         """
         Check if a given number is a Fibonacci number.
         
@@ -132,7 +132,7 @@ class Fibonacci:
         
         return a == num
     
-    def clear_cache(self):
+    def clear_cache(self) -> None:
         """Clear the memoization cache."""
         self._cache = {0: 0, 1: 1}
 
