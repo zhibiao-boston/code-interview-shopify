@@ -38,10 +38,17 @@ class Fibonacci:
         if n <= 1:
             return n
         
+        # Initialize the first two Fibonacci numbers: F(0) = 0, F(1) = 1
         a, b = 0, 1
+        
+        # Iterate from position 2 to n, calculating each Fibonacci number
+        # by adding the previous two numbers in the sequence
         for _ in range(2, n + 1):
+            # Update: a becomes the previous b, b becomes the sum of previous a and b
+            # This maintains the Fibonacci relationship: F(n) = F(n-1) + F(n-2)
             a, b = b, a + b
         
+        # Return the nth Fibonacci number (stored in b)
         return b
     
     def nth_fibonacci_recursive(self, n):
