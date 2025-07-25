@@ -369,3 +369,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print("Thank you for watching the FileSystem demo!")
